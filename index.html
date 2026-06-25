@@ -850,95 +850,6 @@ body::before {
   background: rgba(10, 12, 20, 0.8) !important;
   border-bottom: 1px solid var(--border) !important;
 }
-/* ---------- Hire Me button ---------- */
-.btn-hire{
-  font-family:var(--font-body);
-  font-size:14.5px;
-  font-weight:600;
-  padding:11px 20px;
-  border-radius:7px;
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  background:var(--ok);
-  color:#fff;
-  border:none;
-  cursor:pointer;
-  transition:transform 0.15s, box-shadow 0.15s, background 0.15s;
-  animation:hire-pulse 2.5s infinite;
-}
-.btn-hire:hover{
-  background:#16a34a;
-  transform:translateY(-2px);
-  box-shadow:0 8px 20px rgba(34,197,94,0.4);
-}
-.btn-hire--sm{ font-size:13px; padding:7px 14px; animation:none; }
-@keyframes hire-pulse{
-  0%{ box-shadow:0 0 0 0 rgba(34,197,94,0.45); }
-  70%{ box-shadow:0 0 0 8px rgba(34,197,94,0); }
-  100%{ box-shadow:0 0 0 0 rgba(34,197,94,0); }
-}
-@media (prefers-reduced-motion: reduce){ .btn-hire{ animation:none; } }
-
-/* floating hire button - mobile only */
-.floating-hire{
-  position:fixed; right:24px; bottom:24px;
-  background:var(--ok); color:#fff; border:none;
-  font-family:var(--font-body); font-weight:600; font-size:13.5px;
-  padding:12px 18px; border-radius:24px;
-  cursor:pointer;
-  box-shadow:0 6px 16px rgba(0,0,0,0.3);
-  z-index:60; display:none;
-  opacity:0; visibility:hidden; transform:translateY(10px);
-  transition:opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
-}
-.floating-hire.visible{ opacity:1; visibility:visible; transform:translateY(0); }
-@media(max-width:760px){
-  .floating-hire{ display:block; }
-  .back-to-top{ bottom:84px; }
-}
-
-/* select fields (project type / timeline) */
-.field select{
-  width:100%; font-family:var(--font-body); font-size:14.5px;
-  color:var(--ink); background:var(--bg-raised);
-  border:1px solid var(--border); border-radius:7px;
-  padding:11px 13px; transition:border-color 0.15s; appearance:none;
-}
-.field select:focus{ border-color:var(--accent); }
-
-/* ---------- hire modal ---------- */
-.modal-overlay{
-  position:fixed; inset:0;
-  background:rgba(5,7,12,0.75);
-  backdrop-filter:blur(4px);
-  z-index:200;
-  display:flex; align-items:center; justify-content:center;
-  padding:20px;
-  opacity:0; visibility:hidden;
-  transition:opacity 0.25s ease, visibility 0.25s;
-}
-.modal-overlay.open{ opacity:1; visibility:visible; }
-.modal-box{
-  position:relative; width:100%; max-width:480px; max-height:88vh;
-  overflow-y:auto;
-  background:var(--bg-raised); border:1px solid var(--border);
-  border-radius:12px; padding:32px 28px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.5);
-  transform:translateY(16px);
-  transition:transform 0.25s ease;
-}
-.modal-overlay.open .modal-box{ transform:translateY(0); }
-.modal-close{
-  position:absolute; top:16px; right:16px;
-  background:none; border:none; color:var(--muted);
-  font-size:18px; cursor:pointer;
-}
-.modal-close:hover{ color:var(--ink); }
-.modal-success{
-  font-family:var(--font-mono); font-size:14px; color:var(--ok);
-  text-align:center; padding:24px 0;
-}
 </style>
 </head>
 <body>
@@ -988,7 +899,6 @@ body::before {
     <a href="https://github.com/deepakpandey2004" target="_blank" rel="noopener">GitHub</a>
     <a href="https://linkedin.com/in/deepakpandey12" target="_blank" rel="noopener">LinkedIn</a>
   </div>
-  <button type="button" class="btn btn-hire hire-trigger">Hire me →</button>
 </div>
 
 <!-- ===================== hero ===================== -->
@@ -1006,7 +916,6 @@ body::before {
       </p>
 
       <div class="btn-row">
-  <button type="button" class="btn btn-hire hire-trigger">Hire me →</button>
   <a href="#projects" class="btn btn-primary">View projects →</a>
   <a href="Python_Developer_Deepak_Resume.pdf" download class="btn btn-secondary">Download resume</a>
 </div>
@@ -1021,7 +930,6 @@ body::before {
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
           linkedin
         </a>
-        <button type="button" class="btn btn-hire btn-hire--sm hire-trigger">Hire me</button>
         <a href="deepakpandey4002@gmail.com">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 5.5C2 4.67 2.67 4 3.5 4h17c.83 0 1.5.67 1.5 1.5v13c0 .83-.67 1.5-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13zm2 .7v.2l8 5.6 8-5.6v-.2H4zm16 2.5-7.43 5.2a1 1 0 0 1-1.14 0L4 8.7V18h16V8.7z"/></svg>
           email
@@ -1076,7 +984,6 @@ body::before {
           looking for a full-time role where I can contribute to building
           meaningful products.
         </p>
-        <button type="button" class="btn btn-hire hire-trigger" style="margin-top:8px;">Hire me →</button>
       </div>
       <div class="about-photo">
         <img src="profile.jpeg" alt="Deepak Pandey" />
@@ -1400,62 +1307,10 @@ body::before {
   <div class="wrap">
     <p>© 2026 Deepak Pandey</p>
     <p class="status-line">● status: available for opportunities</p>
-    <button type="button" class="btn btn-hire btn-hire--sm hire-trigger">Hire me</button>
   </div>
 </footer>
 <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">↑</button>
-<button type="button" class="floating-hire hire-trigger" aria-label="Hire me">Hire me</button>
-
-<!-- ===================== hire modal ===================== -->
-<div class="modal-overlay" id="hireModalOverlay">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="hireModalTitle">
-    <button class="modal-close" id="hireModalClose" aria-label="Close">✕</button>
-
-    <div class="eyebrow"><span class="badge post">POST</span> /hire-me <span class="ok">· ready</span></div>
-    <h2 id="hireModalTitle" class="section-title" style="font-size:24px; margin-bottom:18px;">Let's work together</h2>
-
-    <form id="hireForm" action="https://formspree.io/f/mvzjzyre" method="POST">
-      <div class="field">
-        <label for="hireName">name</label>
-        <input id="hireName" name="name" type="text" required placeholder="Your name" />
-      </div>
-      <div class="field">
-        <label for="hireEmail">email</label>
-        <input id="hireEmail" name="email" type="email" required placeholder="you@example.com" />
-      </div>
-      <div class="field">
-        <label for="hireCompany">company</label>
-        <input id="hireCompany" name="company" type="text" placeholder="Company / organisation (optional)" />
-      </div>
-      <div class="field">
-        <label for="hireType">project_type</label>
-        <select id="hireType" name="project_type" required>
-          <option value="" disabled selected>Select one</option>
-          <option value="Full-time role">Full-time role</option>
-          <option value="Internship">Internship</option>
-          <option value="Freelance project">Freelance project</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="hireTimeline">timeline</label>
-        <select id="hireTimeline" name="timeline" required>
-          <option value="" disabled selected>Select one</option>
-          <option value="ASAP">ASAP</option>
-          <option value="Within a month">Within a month</option>
-          <option value="1-3 months">1-3 months</option>
-          <option value="Just exploring">Just exploring</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="hireMessage">message</label>
-        <textarea id="hireMessage" name="message" required placeholder="Tell me a bit about the role or project"></textarea>
-      </div>
-      <button type="submit" class="btn btn-hire" style="width:100%; justify-content:center;">Send request →</button>
-      <div class="form-status" id="hireFormStatus"></div>
-    </form>
-  </div>
-</div>
+      
 <script>
   // ---- scroll-spy: update the top console bar ----
   const sections = [
@@ -1641,55 +1496,6 @@ function drawSparkle(x, y) {
 }
 
 animate();
-// ---- Hire Me modal ----
-const hireModalOverlay = document.getElementById('hireModalOverlay');
-const hireModalClose = document.getElementById('hireModalClose');
-const hireTriggers = document.querySelectorAll('.hire-trigger');
-const hireForm = document.getElementById('hireForm');
-const hireFormStatus = document.getElementById('hireFormStatus');
-
-function openHireModal(){
-  hireModalOverlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeHireModal(){
-  hireModalOverlay.classList.remove('open');
-  document.body.style.overflow = '';
-}
-hireTriggers.forEach(btn => btn.addEventListener('click', openHireModal));
-hireModalClose.addEventListener('click', closeHireModal);
-hireModalOverlay.addEventListener('click', (e) => {
-  if(e.target === hireModalOverlay) closeHireModal();
-});
-document.addEventListener('keydown', (e) => {
-  if(e.key === 'Escape' && hireModalOverlay.classList.contains('open')) closeHireModal();
-});
-
-hireForm.addEventListener('submit', async function(e){
-  e.preventDefault();
-  hireFormStatus.textContent = 'Sending...';
-  const formData = new FormData(hireForm);
-  try{
-    const response = await fetch(hireForm.action, {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    });
-    if(response.ok){
-      hireForm.innerHTML = '<div class="modal-success">✔ Thanks! Your request has been sent — I will reply within 24h.</div>';
-    } else {
-      hireFormStatus.textContent = '❌ Oops! There was a problem. Try again.';
-    }
-  } catch(err){
-    hireFormStatus.textContent = '❌ Error connecting to the server.';
-  }
-});
-
-// ---- floating hire button visibility (mobile) ----
-const floatingHireBtn = document.querySelector('.floating-hire');
-window.addEventListener('scroll', () => {
-  if(floatingHireBtn) floatingHireBtn.classList.toggle('visible', window.scrollY > 400);
-});
 </script>
 
 </body>
