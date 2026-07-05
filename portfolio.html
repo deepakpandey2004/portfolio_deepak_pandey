@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Deepak Pandey — Backend Developer</title>
@@ -143,6 +145,8 @@
     }
     .console-nav a:hover{ color:var(--accent); }
   }
+
+  
 
   .comment{
     font-family:var(--font-mono);
@@ -865,6 +869,40 @@ body::before {
 
     <article class="project-card">
       <div class="project-head">
+        <span class="path">/projects/<strong>speaku</strong></span>
+        <span class="meta"><span class="ok">200 OK</span> · 14ms</span>
+      </div>
+      <div class="project-body">
+        <div class="project-info">
+          <h3>SpeakU</h3>
+          <p class="tagline">Real-time language exchange platform</p>
+          <p class="desc">
+            Connects learners for live conversation practice over WebSocket-based matchmaking 
+            and WebRTC-powered peer-to-peer voice calls. FastAPI serves the backend,
+             with Supabase/PostgreSQL managing users and call history.
+          </p>
+          <div class="tag-row">
+            <span class="tag">FastAPI</span><span class="tag">WebSocket</span>
+            <span class="tag">Agora SDK</span><span class="tag">Supabase</span>
+          </div>
+          <div class="challenge">
+            <strong>The hard part:</strong> tracked down a Supabase connection-pooling bug
+            that was silently dropping connections in production.
+          </div>
+          <div class="link-row">
+            <a href="https://speaku-2-o.onrender.com" class="p-link demo">Live demo ↗</a>
+            <a href="https://github.com/deepakpandey2004/SpeakU-2.O" class="p-link code">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project-preview">
+          <img src="speakU_2.O.png" alt="SpeakU" />
+        </div>
+      </div>
+    </article>
+
+
+    <article class="project-card">
+      <div class="project-head">
         <span class="path">/projects/<strong>vocal-vantage</strong></span>
         <span class="meta"><span class="ok">200 OK</span> · 12ms</span>
       </div>
@@ -894,39 +932,6 @@ body::before {
         </div>
         <div class="project-preview">
           <img src="vocal-vantage.png" alt="Vocal Vantage" />
-        </div>
-      </div>
-    </article>
-
-    <article class="project-card">
-      <div class="project-head">
-        <span class="path">/projects/<strong>speaku</strong></span>
-        <span class="meta"><span class="ok">200 OK</span> · 14ms</span>
-      </div>
-      <div class="project-body">
-        <div class="project-info">
-          <h3>SpeakU</h3>
-          <p class="tagline">Real-time language exchange platform</p>
-          <p class="desc">
-            Connects learners for live conversation practice over WebSocket-based chat and
-            Agora-powered voice/video. FastAPI serves the backend, with Supabase/PostgreSQL
-            managing users and history.
-          </p>
-          <div class="tag-row">
-            <span class="tag">FastAPI</span><span class="tag">WebSocket</span>
-            <span class="tag">Agora SDK</span><span class="tag">Supabase</span>
-          </div>
-          <div class="challenge">
-            <strong>The hard part:</strong> tracked down a Supabase connection-pooling bug
-            that was silently dropping connections in production.
-          </div>
-          <div class="link-row">
-            <a href="https://speaku-ymeo.onrender.com/docs" class="p-link demo">Live demo ↗</a>
-            <a href="https://github.com/deepakpandey2004/SpeakU" class="p-link code">GitHub ↗</a>
-          </div>
-        </div>
-        <div class="project-preview">
-          <img src="speakU.png" alt="SpeakU" />
         </div>
       </div>
     </article>
