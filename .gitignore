@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # OS metadata
 .DS_Store
 Thumbs.db
@@ -7,4 +8,10 @@ Thumbs.db
 .idea/
 
 # Node modules (if you ever use them)
+=======
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+>>>>>>> c09d23acb8fffed18ecd1f34435ba4dcf1dbd18a
 node_modules/
