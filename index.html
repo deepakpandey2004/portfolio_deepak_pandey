@@ -374,12 +374,12 @@
 
     /* ---------- projects ---------- */
   .project-card{
-    position: relative;
+    position: relative !important;
+    overflow: hidden !important;
     border:1px solid var(--border);
     border-radius:10px;
     background:var(--bg-raised);
     margin-bottom:24px;
-    overflow:hidden;
     opacity:0; transform:translateY(14px);
     transition:opacity 0.5s ease, transform 0.5s ease;
   }
