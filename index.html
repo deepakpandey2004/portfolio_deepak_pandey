@@ -595,7 +595,18 @@
   }
   .log-entry h3{ font-size:17px; font-weight:600; margin-bottom:2px; }
   .log-entry .org{ color:var(--muted); font-size:14px; margin-bottom:8px; }
-  .log-entry p.note{ font-size:14px; color:var(--muted); max-width:560px; }
+  .log-entry .note-list{
+    font-size:14px;
+    color:var(--muted);
+    max-width:560px;
+    padding-left:18px;
+    margin-top:6px;
+  }
+  .log-entry .note-list li{
+    margin-bottom:8px;
+    line-height:1.55;
+  }
+  .log-entry .note-list li:last-child{ margin-bottom:0; }
 
   .achievements-grid{
     display:grid;
@@ -1293,26 +1304,21 @@ html[data-theme="light"] .field textarea {
           <span class="log-date">Jan 2026 - Mar 2026</span>
           <h3>Software Engineer Intern</h3>
           <div class="org">Solidate Infotech</div>
-          <p class="note">
-            • Built and tested REST API endpoints using Python and FastAPI, ensuring proper request handling and response
-            formatting for backend services.
-            • Wrote and executed test cases to validate API functionality, tracked bugs, and documented fixes to improve overall code
-            reliability.
-            • Used Git and GitHub for version control, managing code commits and collaborating on shared repositories during the
-            internship
+          <ul class="note-list">
+            <li>Built and tested REST API endpoints using Python and FastAPI, ensuring proper request handling and response formatting for backend services.</li>
+            <li>Wrote and executed test cases to validate API functionality, tracked bugs, and documented fixes to improve overall code reliability.</li>
+            <li>Used Git and GitHub for version control, managing code commits and collaborating on shared repositories during the internship.</li>
+          </ul>
         </div>
         <div class="log-entry">
           <span class="log-date">May 2025 - July 2025</span>
           <h3>Python Developer Intern</h3>
           <div class="org">Alfido Tech</div>
-          <p class="note">
-            • Developed backend modules using Python and Fast API to handle user data, form submissions, and server-side logic for
-            internal web applications.
-            • Connected application to PostgreSQL database using SQLAlchemy ORM to perform CRUD operations — create, read,
-            update, and delete records.
-            • Tested APIs using Postman to verify endpoints were returning correct data and handling errors like missing fields or
-            invalid input properly
-          </p>
+          <ul class="note-list">
+            <li>Developed backend modules using Python and FastAPI to handle user data, form submissions, and server-side logic for internal web applications.</li>
+            <li>Connected application to PostgreSQL database using SQLAlchemy ORM to perform CRUD operations — create, read, update, and delete records.</li>
+            <li>Tested APIs using Postman to verify endpoints were returning correct data and handling errors like missing fields or invalid input properly.</li>
+          </ul>
         </div>
       </div>
 
