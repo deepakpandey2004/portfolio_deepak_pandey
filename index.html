@@ -553,13 +553,13 @@
   .skill-card img { width: 28px; height: 28px; object-fit: contain; }
   .skill-card span { font-size: 15px; font-weight: 600; color: var(--ink); transition: color 0.25s; }
 
-  .skill-card.selected {
-    transform: scale(1.1) !important;
-    border-color: var(--accent) !important;
-    background: rgba(61,107,255,0.12) !important;
+  .skill-card:hover {
+    transform: scale(1.1);
+    border-color: var(--accent);
+    background: rgba(61,107,255,0.12);
     box-shadow: 0 0 0 1px var(--accent), 0 0 24px rgba(61,107,255,0.55), 0 10px 24px rgba(61,107,255,0.25);
   }
-  .skill-card.selected span {
+  .skill-card:hover span {
     color: var(--accent);
   }
 
@@ -1572,12 +1572,6 @@ document.addEventListener('click', (e) => {
   if (!contactPopup.contains(e.target) && !fabChat.contains(e.target)) {
     contactPopup.classList.remove('show');
   }
-});
-// ---- click-to-highlight skill cards ----
-document.querySelectorAll('.skill-card').forEach(card => {
-  card.addEventListener('click', () => {
-    card.classList.toggle('selected');
-  });
 });
 
 </script>
