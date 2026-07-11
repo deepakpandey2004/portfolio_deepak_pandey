@@ -474,6 +474,27 @@
   .p-link.code { background: transparent; color: var(--ink); }
   .p-link:hover { transform: translateY(-1px); box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
 
+  .more-projects {
+  text-align: center;
+  margin-top: 8px;
+}
+.more-projects a {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.more-projects a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
   /* ---------- skills ---------- */
   .skills-grid {
     display: grid;
@@ -1151,6 +1172,11 @@ html[data-theme="light"] .nebula:nth-of-type(2) {
         </div>
       </div>
     </article>
+    <div class="more-projects">
+      <a href="https://github.com/deepakpandey2004" target="_blank" rel="noopener">
+        More projects on GitHub ↗
+      </a>
+    </div>
   </div>
 </section>
 
