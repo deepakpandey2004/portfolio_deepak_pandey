@@ -733,15 +733,15 @@
   }
 
   .nebula {
-    position: fixed;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(61, 107, 255, 0.05) 0%, rgba(0,0,0,0) 70%);
-    border-radius: 50%;
-    z-index: -1;
-    pointer-events: none;
-    filter: blur(80px);
-  }
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(61, 107, 255, 0.05) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(90px);
+}
 
   .response-panel, .project-card, .skill-card, .cert-card, .field input, .field textarea {
     background: var(--bg-raised) !important;
@@ -767,8 +767,18 @@
     --ok: #16A34A;
   }
   html[data-theme="light"] body { background: #F5F6F8; }
-  html[data-theme="light"] body::before,
-  html[data-theme="light"] .nebula { display: none; }
+  html[data-theme="light"] body::before {
+  display: none;
+}
+html[data-theme="light"] .nebula {
+  opacity: 1;
+}
+html[data-theme="light"] .nebula:nth-of-type(1) {
+  background: radial-gradient(circle, rgba(139,92,246,0.25) 0%, rgba(139,92,246,0) 70%);
+}
+html[data-theme="light"] .nebula:nth-of-type(2) {
+  background: radial-gradient(circle, rgba(236,72,153,0.2) 0%, rgba(236,72,153,0) 70%);
+}
   html[data-theme="light"] .console-bar { background: rgba(255,255,255,0.9) !important; }
   html[data-theme="light"] .hero-photo,
   html[data-theme="light"] .response-panel,
@@ -909,6 +919,7 @@
 <body>
 <div class="nebula" style="top: -100px; right: -100px;"></div>
 <div class="nebula" style="bottom: -100px; left: -100px;"></div>
+<div class="nebula" style="top: 200px; left: 50%; transform: translateX(-50%);"></div>
 
 <!-- ===================== top console bar ===================== -->
 <div class="console-bar">
