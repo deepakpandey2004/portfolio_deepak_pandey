@@ -935,6 +935,116 @@ html[data-theme="light"] .nebula:nth-of-type(2) {
     background: none;
     border: none;
   }
+
+  
+.hamburger {
+  display: flex;          
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 6px;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+.hamburger:hover {
+  border-color: var(--accent);
+}
+
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+@media(min-width: 720px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/* -------- Mobile Menu -------- */
+.mobile-menu {
+  display: none;        
+  position: fixed;
+  top: 52px;              
+  left: 0;
+  right: 0;
+  background: var(--bg-raised);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 49;
+  backdrop-filter: blur(8px);
+
+  
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+.mobile-menu.open {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Mobile menu links */
+.mob-link {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--muted);
+  padding: 12px 8px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s, padding-left 0.2s;
+}
+.mob-link:last-child {
+  border-bottom: none;
+}
+.mob-link::before {
+  content: '/';
+  color: var(--accent);
+  font-weight: 600;
+}
+.mob-link:hover {
+  color: var(--accent);
+  padding-left: 14px;
+}
+
+
+@media(min-width: 720px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
+
 </style>
 </head>
 <body>
@@ -949,12 +1059,33 @@ html[data-theme="light"] .nebula:nth-of-type(2) {
     <span class="console-path">deepak.dev<strong id="consolePath">/profile</strong></span>
     <span class="console-status"><span class="dot"></span><span id="consoleStatus">200 OK · 9ms</span></span>
     <nav class="console-nav">
-      <a href="#projects">projects</a>
-      <a href="#skills">skills</a>
-      <a href="#experience">experience</a>
-      <a href="#contact">contact</a>
-    </nav>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">🌙</button>
+  <a href="#projects">projects</a>
+  <a href="#skills">skills</a>
+  <a href="#experience">experience</a>
+  <a href="#contact">contact</a>
+</nav>
+
+<button class="theme-toggle" id="themeToggle" 
+  aria-label="Toggle dark/light mode">🌙
+</button>
+
+<!-- Hamburger button - sirf mobile pe dikhega -->
+<button class="hamburger" id="hamburger" aria-label="Open menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<!-- Mobile menu - by default hidden -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mob-link">about</a>
+  <a href="#projects" class="mob-link">projects</a>
+  <a href="#skills" class="mob-link">skills</a>
+  <a href="#experience" class="mob-link">experience</a>
+  <a href="#education" class="mob-link">education</a>
+  <a href="#achievements" class="mob-link">achievements</a>
+  <a href="#contact" class="mob-link">contact</a>
+</div>
   </div>
 </div>
 
@@ -1561,6 +1692,36 @@ html[data-theme="light"] .nebula:nth-of-type(2) {
   scrollTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+  // -------- Hamburger Menu Logic --------
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobLinks = document.querySelectorAll('.mob-link');
+
+// Hamburger click → menu open/close
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+
+// Koi bhi link click karo → menu band ho jaye
+mobLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+// Menu ke bahar click karo → menu band ho jaye
+document.addEventListener('click', (e) => {
+  if (
+    !mobileMenu.contains(e.target) && 
+    !hamburger.contains(e.target)
+  ) {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+});
 </script>
 
 </body>
